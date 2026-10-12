@@ -1,0 +1,106 @@
+FALLOUT 4 FACIAL SCULPT FORMAT
+==============================
+
+Two plain-text files per sex define every sculpt that the face editor (Plastic Surgery / LooksMenu) offers:
+
+  Data\Meshes\Actors\Character\CharacterAssets\
+    HumanRaceFacialBoneRegions<Male|Female>.txt          - what each sculpt does (JSON)
+    HumanRaceFacialBoneRegionUIRemapping<Male|Female>.txt - how the controls map onto it (tab-separated)
+
+Notes marked (observed) are inferred from how the vanilla files and this mod behave, and haven't been confirmed against engine code.
+
+
+1. HumanRaceFacialBoneRegions<Sex>.txt
+--------------------------------------
+
+A JSON array. Each element is one sculpt:
+
+  {
+    "ID"   : 100000,               // unique sculpt ID, the key saved in face data
+    "Name" : "Eyebrows - Full",    // label shown in the UI
+    "BonesA" : [                   // bones this sculpt moves (can be null for morph-only sculpts)
+      {
+        "Bone"   : "bone_C_MasterEyebrow",
+        "Maxima" : { "Position":{x,y,z}, "Rotation":{x,y,z}, "Scale":{x,y,z} },
+        "Minima" : { "Position":{x,y,z}, "Rotation":{x,y,z}, "Scale":{x,y,z} }
+      }
+    ],
+    "Defaults" : { "Position":{0,0,0}, "Rotation":{0,0,0}, "Scale":{0,0,0} },
+
+    // optional fields
+    "AssociatedMorphGroup"   : "Mouth",     // Eyes, Nose, Mouth, Ears, Cheeks, Chin, Jaw, Forehead, Neck
+    "AssociatedTintGroup"    : "Brows",     // links the sculpt to a tint layer (e.g. brows follow brow bones)
+    "AssociatedHeadPartType" : "Eyes",      // links the sculpt to a head part (e.g. eyeballs follow eye bones)
+    "AssociatedMorphSliders" : [921646551, 921646552],  // chargen morph slider IDs driven by this sculpt
+    "IsNeckRegion"           : true
+  }
+
+Maxima / Minima
+  The UI control value runs from Minima (full negative) through Defaults (0) to Maxima (full positive), one axis at a time. (observed)
+  Position - game units. The vanilla ranges are roughly +/-0.1 to 0.3; this mod goes up to about +/-0.6.
+  Rotation - degrees.
+  Scale    - a change from 1.0, so 0 means unchanged and 0.15 means +15%.
+
+  An axis set to 0 in both Maxima and Minima is locked for that bone.
+
+Mirroring
+  Symmetrical sculpts list the R and L bones separately, with X position (and Y/Z rotation where relevant) negated on the L bone. Mirrored in this way, the pair moves symmetrically. Single-side sculpts simply list only one bone.
+
+Morph-driven sculpts
+  The vanilla eyelid sculpts (female IDs 58, 59; male IDs 60, 61) have zeroed bone ranges. They work entirely through AssociatedMorphSliders, which point at chargen morph sliders defined on the race in Fallout4.esm. Section 2 explains how those sliders are mapped to controls.
+  Mouth - Overbite (female 513005, male 100513005) works the same way. It drives the race's overbite morph slider, which Fallout4.esm defines and sets on NPCs but no vanilla sculpt exposes: female 921646364 (Overbite to Underbite), male 921646200 (Underbite to Overbite). These are the IDs the game's own female and male NPCs use, so the slider direction is reversed between the sexes.
+
+Bones used
+  Only bones in the face skeleton (bone_C_*, bone_L_*, bone_R_*) are valid targets. This mod currently uses 60 of them. See the Articles bone list for coverage.
+
+
+2. HumanRaceFacialBoneRegionUIRemapping<Sex>.txt
+------------------------------------------------
+
+Tab-separated. Lines starting with ';' are comments.
+
+Region lines:
+
+  Region <ID> <PosX> <PosY> <PosZ> <RotX> <RotY> <RotZ> <TextureValue> [BanterEventType]
+
+  ID             - must match a sculpt ID from the Regions file.
+  PosX..RotZ     - which bone axis each UI control drives, with an optional '-' to invert it.
+                   The six columns are the six UI inputs (move left/right, up/down, forward/back via
+                   scroll, then the rotation inputs). (observed) Writing '-Z' under PosX makes horizontal mouse
+                   movement drive the bone's negative Z axis. This is how scroll is made to mean
+                   "forward/back" rather than "puff out".
+  TextureValue   - the region's value in the face-selection mask, used when the player clicks the face
+                   directly. Several sculpts can share one value, so clicking a face area may land
+                   on a neighboring sculpt. (observed)
+                   Note: in LooksMenu, selecting a sculpt from the list leaves it frozen,
+                   because Sculpt mode doesn't re-send the selected region to the game (Color and
+                   Morph modes do). The optional LooksMenu List Sculpt Fix adds that call. While a
+                   list pick is active, clicking the face can still replace or freeze it.
+  BanterEventType- optional; 1 = eyes, 2 = nose, 3 = mouth. Picks which companion comment plays
+                   ("see ChargenUtils.h" in Bethesda's header).
+
+  Sculpts without a Region line still work, but use default axis mapping, so the controls may feel wrong.
+
+Slider lines (morph mapping):
+
+  Slider <MorphSliderID> <AxisIndex>
+
+  Maps a chargen morph slider (as referenced by AssociatedMorphSliders) onto a control axis of the sculpt that owns it. Vanilla example:
+
+    Slider 921646551 2   ; X translation -> EyesUpprLidDown/EyesUpprLidUp
+
+
+3. ID RULES
+-----------
+
+  - IDs must be unique within a file.
+  - IDs are saved into face data (saves, presets, NPC facegen). Changing an existing ID resets that sculpt to 0 on every face that used it.
+  - IDS MUST NOT OVERLAP BETWEEN THE MALE AND FEMALE FILES. Vanilla keeps them separate (female 100000+, male 0-10 / 921646xxx). If both sexes use the same custom IDs, one list takes them over, and the other shows only vanilla sculpts. This was the cause of the "installing Male removes the Female extras" bug (confirmed in game: a test build with every ID in both files reproduced it).
+  - Morph slider IDs are kept per sex too. Vanilla gives each sex its own eyelid sliders (female 921646551-921646554, male 921646547-921646550), and this mod does the same for the overbite sliders.
+
+  ID ranges used by this mod:
+    Female extended:  500495 - 12517999
+    Male extended:    Female ID + 100000000   (100500495 - 112517999)
+    Vanilla:          untouched
+
+  Editing Human race face data in the Creation Kit regenerates both files, which overwrites the mod.

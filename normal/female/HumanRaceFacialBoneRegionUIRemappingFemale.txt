@@ -1,0 +1,413 @@
+;Region name	PosX	PosY	PosZ	RotX	RotY	RotZ	Texture Value	Banter Event Type (optional - see ChargenUtils.h for values)
+Region	100003	-Z	Y	-X	X	Y	Z	5	;Cheekbones
+Region	100027	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back
+Region	100004	-Z	Y	X	X	Y	Z	15	;Cheeks
+Region	100014	-X	Y	-Z	X	Y	Z	20	;Chin
+Region	100008	X	Y	-Z	X	Y	Z	25	;Earlobes
+Region	100005	-Z	Y	-X	X	Y	Z	30	;Ears - Full
+Region	100007	X	Y	-Z	X	Y	Z	35	;Ears - Middle
+Region	100006	X	Y	-Z	X	Y	Z	40	;Ears - Top
+Region	100001	X	Y	-Z	X	Y	Z	45	;Eyebrows - Inner
+Region	100000	-X	Y	-Z	X	Y	Z	50	;Eyebrows - Full
+Region	100002	X	Y	-Z	X	Y	Z	55	;Eyebrows - Outer
+Region	100018	X	Y	-Z	X	Y	Z	60	;Eyebrows - Middle
+Region	58	X	Y	Z	X	Y	Z	155	1	;Eyelids - Top
+Region	59	X	Y	Z	X	Y	Z	160	1	;Eyelids - Bottom
+Region	100016	X	Y	-Z	Z	X	Y	65	1	;Eyes
+Region	100024	X	Y	-Z	X	Y	Z	70	;Forehead
+Region	100012	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle
+Region	100011	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer
+Region	100025	-X	Y	-Z	X	Y	Z	85	;Face - Lower
+Region	100023	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom
+Region	100021	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners
+Region	100020	-X	Y	-Z	X	Y	Z	100	3	;Mouth - Full
+Region	10062	-Z	Y	-X	X	Y	Z	105	3	;Jowls - Lower
+Region	100022	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top
+Region	100015	X	Y	-Z	X	Y	Z	115	;Neck
+Region	100017	-X	Y	-Z	X	Y	Z	120	2	;Nose - Bridge
+Region	100009	-X	Y	-Z	X	Y	Z	125	2	;Nose - Full
+Region	10063	X	Y	-Z	X	Y	Z	150	2	;Nose - Ridge
+Region	100019	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip
+Region	100010	Z	Y	X	X	Y	Z	135	2	;Nostrils
+Region	100026	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper
+Region	100013	-Z	Y	X	X	Y	Z	145	;Temples
+;Eye morph sliders
+Slider	921646551	2	;mapped to X translation - EyesUpprLidDown/EyesUpprLidUp
+Slider	921646552	1	;mapped to Y translation - EyesHoodFat/EyesHoodThin
+Slider	921646553	2	;mapped to -Z translation - EyesLowLidDown
+Slider	921646554	1	;mapped to Y rotation (e.g. bumpers) - EyesLowSunken
+;
+; End vanilla sculpts
+;
+; Extended "sliders" start here
+; Normally I wouldn't bother, but if they aren't defined here, the controls in creation
+;aren't quite right
+;(e.g. scrollwheel puffs cheeks out instead of moving them forward)
+; Padding left in index numbers between each slider, most will
+;probably be for x/y/z as needed (most of which are already in first version)
+; X rotation (or Y if applicable) is built into first slider,
+;it's there already after all
+; At least 10 padding is between each set, I don't foresee much if any expansion
+;in the future, but I'm too paranoid to not do it just in case.
+;plenty of index numbers, after all.
+;
+;
+; I would just like to say, this and the accompanying FacialBoneRegions file are
+;a dream to work on compared to anything in Skyrim. ECE and its lack of proper
+;documentation especially was a huge pain in the ass to figure out
+; (and even after screwing with it so much, I don't think I figured all its
+;features out, nor did I manage to surmount all its bugs).
+; THis system, on the other hand, doesn't need documentation; it's all human-readable
+;and in most cases self-explanatory.
+; Hopefully the next Bethesda game will follow suit. GG here, Bethesda.
+;
+Region	500500	X	Y	-Z	X	Y	Z	70	;Forehead Fine
+Region	500510	X	Y	-Z	X	Y	Z	70	;Forehead
+Region	500534	X	Y	-Z	X	Y	Z	70	;Forehead Scale Y
+Region	500544	X	Y	-Z	X	Y	Z	70	;Forehead Scale Y Fine
+Region	500537	X	Y	-Z	X	Y	Z	70	;Forehead Scale Z
+Region	500547	X	Y	-Z	X	Y	Z	70	;Forehead Scale Z Fine
+
+;
+Region	501000	-Z	Y	X	X	Y	Z	145	;Temples
+Region	501010	-Z	Y	X	X	Y	Z	145	;Temples Fine
+Region	501064	-Z	Y	X	X	Y	Z	145	;Temples Rot Y
+Region	501067	-Z	Y	X	X	Y	Z	145	;Temples Rot Z
+;
+Region	501500	-Z	Y	-X	X	Y	Z	30	;Ears - Full
+Region	501510	-Z	Y	-X	X	Y	Z	30	;Ears - Full Fine
+Region	501560	-Z	Y	-X	X	Y	Z	30	;Ears - Full Rot X
+Region	501567	-Z	Y	-X	X	Y	Z	30	;Ears - Full Rot Z
+
+Region	502000	-Z	Y	-X	X	Y	Z	40	;Ears - Top
+Region	502010	-Z	Y	-X	X	Y	Z	40	;Ears - Top Fine
+Region	502060	X	Y	-Z	X	Y	Z	40	;Ears - Top Rot Y
+Region	502067	X	Y	-Z	X	Y	Z	40	;Ears - Top Rot Z
+
+Region	502500	-Z	Y	-X	X	Y	Z	35	;Ears - Middle
+Region	502510	-Z	Y	-X	X	Y	Z	35	;Ears - Middle Fine
+Region	502560	X	Y	-Z	X	Y	Z	35	;Ears - Middle Rot X
+Region	502567	X	Y	-Z	X	Y	Z	35	;Ears - Middle Rot Z
+
+Region	503000	-Z	Y	-X	X	Y	Z	25	;Earlobes
+Region	503010	-Z	Y	-X	X	Y	Z	25	;Earlobes Fine
+Region	503060	X	Y	-Z	X	Y	Z	25	;Earlobes Rot X
+Region	503067	X	Y	-Z	X	Y	Z	25	;Earlobes Rot Z
+;
+Region	503500	-X	Y	-Z	X	Y	Z	50	;Eyebrows - Full
+Region	503510	-X	Y	-Z	X	Y	Z	50	;Eyebrows - Full Fine
+Region	503564	-X	Y	-Z	X	Y	Z	50	;Eyebrows - Full Rot Y
+Region	503567	-X	Y	-Z	X	Y	Z	50	;Eyebrows - Full Rot Z
+;Note: Eyebrows Full and Middle use a single master bone apiece
+;(bone_C_MasterEyebrow and bone_C_EyebrowMid respectively)
+;Y and Z rotation are thus unused
+Region	504000	X	Y	-Z	X	Y	Z	60	;Eyebrows - Middle
+Region	504010	X	Y	-Z	X	Y	Z	60	;Eyebrows - Middle Fine
+Region	504064	X	Y	-Z	X	Y	Z	60	;Eyebrows - Middle Rot Y
+Region	504067	X	Y	-Z	X	Y	Z	60	;Eyebrows - Middle Rot Z
+
+Region	504500	X	Y	-Z	X	Y	Z	45	;Eyebrows - Inner
+Region	504510	X	Y	-Z	X	Y	Z	45	;Eyebrows - Inner Fine
+Region	504560	X	Y	-Z	X	Y	Z	45	;Eyebrows - Inner Rot X
+Region	504564	X	Y	-Z	X	Y	Z	45	;Eyebrows - Inner Rot Y
+
+Region	505000	X	Y	-Z	X	Y	Z	55	;Eyebrows - Outer
+Region	505010	X	Y	-Z	X	Y	Z	55	;Eyebrows - Outer Fine
+Region	505060	X	Y	-Z	X	Y	Z	55	;Eyebrows - Outer Rot X
+Region	505064	X	Y	-Z	X	Y	Z	55	;Eyebrows - Outer Rot Y
+;
+Region	505200	X	Y	-Z	Z	X	Y	65	1	;Eye "Fat"
+;
+Region	505500	X	Y	Z	X	Y	Z	155	1	;Eyelids - Top
+;
+Region	506000	X	Y	-Z	Z	X	Y	65	1	;Eyes
+Region	506010	X	Y	-Z	Z	X	Y	65	1	;Eyes Fine
+Region	506030	X	Y	-Z	Z	X	Y	65	1	;Eyes Scale X
+Region	506034	X	Y	-Z	Z	X	Y	65	1	;Eyes Scale Y
+Region	506037	X	Y	-Z	Z	X	Y	65	1	;Eyes Scale Z
+Region	506060	X	Y	-Z	Z	X	Y	65	1	;Eyes Rot X
+Region	506064	X	Y	-Z	Z	X	Y	65	1	;Eyes Rot Y
+Region	506067	X	Y	-Z	Z	X	Y	65	1	;Eyes Rot Z
+;
+Region	506500	X	Y	Z	X	Y	Z	160	1	;Eyelids - Bottom
+;
+Region	507000	-X	Y	-Z	X	Y	Z	125	2	;Nose - Full
+Region	507010	-X	Y	-Z	X	Y	Z	125	2	;Nose - Full Fine
+Region	507034	-X	Y	-Z	X	Y	Z	125	2	;Nose - Full Scale Y
+Region	507044	-X	Y	-Z	X	Y	Z	125	2	;Nose - Full Scale Y Fine
+Region	507037	-X	Y	-Z	X	Y	Z	125	2	;Nose - Full Scale Z
+Region	507047	-X	Y	-Z	X	Y	Z	125	2	;Nose - Full Scale Z Fine
+;
+Region	507500	-X	Y	-Z	X	Y	Z	120	2	;Nose - Bridge
+Region	507510	-X	Y	-Z	X	Y	Z	120	2	;Nose - Bridge Fine
+Region	507534	-X	Y	-Z	X	Y	Z	120	2	;Nose - Bridge Scale Y
+Region	507544	-X	Y	-Z	X	Y	Z	120	2	;Nose - Bridge Scale Y Fine
+Region	507537	-X	Y	-Z	X	Y	Z	120	2	;Nose - Bridge Scale Z
+Region	507547	-X	Y	-Z	X	Y	Z	120	2	;Nose - Bridge Scale Z FIne
+;
+Region	508000	X	Y	-Z	X	Y	Z	150	2	;Ridge
+Region	508010	X	Y	-Z	X	Y	Z	150	2	;Ridge Fine
+Region	508030	X	Y	-Z	X	Y	Z	150	2	;Ridge Scale X
+Region	508040	X	Y	-Z	X	Y	Z	150	2	;Ridge Scale X Fine
+Region	508034	X	Y	-Z	X	Y	Z	150	2	;Ridge Scale Y
+Region	508044	X	Y	-Z	X	Y	Z	150	2	;Ridge Scale Y Fine
+Region	508037	X	Y	-Z	X	Y	Z	150	2	;Ridge Scale Z
+Region	508047	X	Y	-Z	X	Y	Z	150	2	;Ridge Scale Z Fine
+Region	508064	X	Y	-Z	X	Y	Z	150	2	;Ridge Rotate Y
+Region	508074	X	Y	-Z	X	Y	Z	150	2	;Ridge Rotate Y Fine
+Region	508067	X	Y	-Z	X	Y	Z	150	2	;Ridge Rotate Z
+Region	508077	X	Y	-Z	X	Y	Z	150	2	;Ridge Rotate Z Fine
+;
+Region	508500	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Ext
+Region	508510	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Ext Fine
+;
+Region	509000	-Z	Y	-X	X	Y	Z	135	2	;Nostrils
+Region	509010	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Fine
+Region	509030	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Scale X
+Region	509040	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Scale X Fine
+Region	509034	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Scale Y
+Region	509044	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Scale Y Fine
+Region	509060	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Rotate X
+Region	509070	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Rotate X Fine
+Region	509064	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Rotate Y
+Region	509074	-Z	Y	-X	X	Y	Z	135	2	;Nostrils Rotate Y Fine
+;
+Region	509500	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip
+Region	509510	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Fine
+Region	509530	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Scale X
+Region	509540	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Scale X Fine
+Region	509534	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Scale Y
+Region	509544	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Scale Y Fine
+Region	509537	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Scale Z
+Region	509547	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Scale Z Fine
+Region	509564	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Rotate Y
+Region	509574	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Rotate Y Fine
+Region	509567	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Rotate Z
+Region	509577	-X	Y	-Z	X	Y	Z	130	2	;Nose - Tip Rotate Z Fine
+
+
+;
+;510000 - Cheekbones back
+;
+Region	510000	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back
+Region	510001	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Fine
+Region	510002	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Scale X
+Region	510003	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Scale X Fine
+Region	510004	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Scale Y
+Region	510005	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Scale Y Fine
+Region	510006	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Scale Z
+Region	510007	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Scale Z Fine
+Region	510008	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Rotate Y
+Region	510009	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Rotate Y Fine
+Region	510010	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Rotate Z
+Region	510011	-Z	Y	X	X	Y	Z	10	;Cheekbones - Back Rotate Z Fine
+;
+;510500 - Cheekbones
+;
+Region	510500	-Z	Y	-X	X	Y	Z	5	;Cheekbones
+Region	510510	-Z	Y	-X	X	Y	Z	5	;Cheekbones FIne
+Region	510530	-Z	Y	-X	X	Y	Z	5	;Cheekbones Scale X
+Region	510540	-Z	Y	-X	X	Y	Z	5	;Cheekbones Scale X Fine
+Region	510534	-Z	Y	-X	X	Y	Z	5	;Cheekbones Scale Y
+Region	510544	-Z	Y	-X	X	Y	Z	5	;Cheekbones Scale Y Fine
+Region	510537	-Z	Y	-X	X	Y	Z	5	;Cheekbones Scale Z
+Region	510547	-Z	Y	-X	X	Y	Z	5	;Cheekbones Scale Z Fine
+Region	510564	-Z	Y	-X	X	Y	Z	5	;Cheekbones Rotate Y
+Region	510574	-Z	Y	-X	X	Y	Z	5	;Cheekbones Rotate Y FIne
+Region	510567	-Z	Y	-X	X	Y	Z	5	;Cheekbones Rotate Z
+Region	510577	-Z	Y	-X	X	Y	Z	5	;Cheekbones Rotate Z Fine
+;
+;511000 - Upper Nasolabial
+;
+Region	511000	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper
+Region	511001	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Fine
+Region	511002	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Scale X
+Region	511003	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Scale X Fine
+Region	511004	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Scale Y
+Region	511005	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Scale Y Fine
+Region	511006	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Scale Z
+Region	511007	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Scale Z Fine
+Region	511008	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Rotate Y
+Region	511009	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Rotate Y Fine
+Region	511010	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Rotate Z
+Region	511011	X	Y	-Z	X	Y	Z	140	2	;Jowls - Upper Rotate Z Fine
+;
+;511500 - Cheeks
+;
+Region	511500	-Z	Y	X	X	Y	Z	15	;Cheeks
+Region	511501	-Z	Y	X	X	Y	Z	15	;Cheeks Fine
+Region	511502	-Z	Y	X	X	Y	Z	15	;Cheeks Scale X
+Region	511503	-Z	Y	X	X	Y	Z	15	;Cheeks Scale X Fine
+Region	511504	-Z	Y	X	X	Y	Z	15	;Cheeks Scale Y
+Region	511505	-Z	Y	X	X	Y	Z	15	;Cheeks Scale Y Fine
+Region	511506	-Z	Y	X	X	Y	Z	15	;Cheeks Scale Z
+Region	511507	-Z	Y	X	X	Y	Z	15	;Cheeks Scale Z Fine
+Region	511508	-Z	Y	X	X	Y	Z	15	;Cheeks Rotate Y
+Region	511509	-Z	Y	X	X	Y	Z	15	;Cheeks Rotate Y Fine
+Region	511510	-Z	Y	X	X	Y	Z	15	;Cheeks Rotate Z
+Region	511511	-Z	Y	X	X	Y	Z	15	;Cheeks Rotate Z Fine
+;
+;512000 - Jaw Back
+;
+Region	512000	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer
+Region	512001	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Fine
+Region	512002	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Scale X
+Region	512003	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Scale X Fine
+Region	512004	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Scale Y
+Region	512005	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Scale Y Fine
+Region	512006	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Scale Z
+Region	512007	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Scale Z Fine
+Region	512008	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Rotate Y
+Region	512009	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Rotate Y Fine
+Region	512010	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Rotate Z
+Region	512011	-Z	Y	-X	X	Y	Z	80	;Jaw - Outer Rotate Z Fine
+;
+;512500 - Jaw Middle
+;
+Region	512500	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle
+Region	512501	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Fine
+Region	512502	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Scale X
+Region	512503	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Scale X Fine
+Region	512504	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Scale Y
+Region	512505	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Scale Y Fine
+Region	512506	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Scale Z
+Region	512507	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Scale Z Fine
+Region	512508	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Rotate Y
+Region	512509	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Rotate Y Fine
+Region	512510	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Rotate Z
+Region	512511	-Z	Y	X	-X	Y	Z	75	;Jaw - Middle Rotate Z Fine
+;
+Region	513000	-X	Y	-Z	X	Y	Z	100	3	;Mouth - Full
+Region	513010	-X	Y	-Z	X	Y	Z	100	3	;Mouth - Full Fine
+Region	513030	-X	Y	-Z	X	Y	Z	100	3	;Mouth Scale X
+Region	513040	-X	Y	-Z	X	Y	Z	100	3	;Mouth Scale X Fine
+Region	513034	-X	Y	-Z	X	Y	Z	100	3	;Mouth Scale Y
+Region	513044	-X	Y	-Z	X	Y	Z	100	3	;Mouth Scale Y Fine
+Region	513037	-X	Y	-Z	X	Y	Z	100	3	;Mouth Scale Z
+Region	513047	-X	Y	-Z	X	Y	Z	100	3	;Mouth Scale Z Fine
+Region	513005	-X	Y	-Z	X	Y	Z	100	3	;Overbite morph
+Slider	921646364	2	;Mouth - Overbite morph - Overbite/Underbite
+
+;
+Region	513500	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top
+Region	513510	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Fine
+;
+Region	514000	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Center
+Region	514010	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Center Fine
+Region	514030	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Center Scale X
+Region	514034	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Center Scale Y
+Region	514037	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Center Scale Z
+;
+Region	514500	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom
+Region	514510	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Fine
+;
+Region	515000	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Center
+Region	515010	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Center Fine
+Region	515030	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Center Scale X
+Region	515034	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Center Scale Y
+Region	515037	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Center Scale Z
+;
+Region	515500	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer
+Region	515510	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer FIne
+Region	515530	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Scale X
+Region	515540	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Scale X Fine
+Region	515534	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Scale Y
+Region	515544	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Scale Y Fine
+Region	515537	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Scale Z
+Region	515547	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Scale Z Fine
+Region	515560	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Rotation X
+Region	515570	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Rotation X Fine
+Region	515564	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Rotation Y
+Region	515574	X	Y	-Z	X	Y	Z	110	3	;Mouth - Top Outer Rotation Y Fine
+;
+Region	516000	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer
+Region	516010	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Fine
+Region	516030	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Scale X
+Region	516040	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Scale X Fine
+Region	516034	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Scale Y
+Region	516044	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Scale Y Fine
+Region	516037	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Scale Z
+Region	516047	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Scale Z Fine
+Region	516060	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Rotation X
+Region	516070	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Rotation X Fine
+Region	516064	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Rotation Y
+Region	516074	X	Y	-Z	X	Y	Z	90	3	;Mouth - Bottom Outer Rotation Y Fine
+;
+Region	516500	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Ext
+Region	516510	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Ext Fine
+;
+Region	517000	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners
+Region	517010	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Fine
+Region	517030	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Scale X
+Region	517040	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Scale X Fine
+Region	517034	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Scale Y
+Region	517044	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Scale Y Fine
+Region	517037	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Scale Z
+Region	517047	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Scale Z Fine
+Region	517060	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Rotation X
+Region	517070	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Rotation X Fine
+Region	517064	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Rotation Y
+Region	517074	X	Y	-Z	X	Y	Z	95	3	;Mouth - Corners Rotation Y Fine
+;
+Region	517500	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples
+Region	517510	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Fine
+Region	517530	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Scale X
+Region	517540	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Scale X Fine
+Region	517534	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Scale Y
+Region	517544	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Scale Y Fine
+Region	517537	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Scale Z
+Region	517547	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Scale Z Fine
+Region	517560	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Rotate X
+Region	517570	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Rotate X Fine
+Region	517564	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Rotate Y
+Region	517574	X	Y	-Z	X	Y	Z	95	3	;Mouth - Dimples Rotate Y Fine
+;
+Region	518000	-X	Y	-Z	X	Y	Z	20	;Chin
+Region	518010	-X	Y	-Z	X	Y	Z	20	;Chin Fine
+Region	518034	-X	Y	-Z	X	Y	Z	20	;Chin Scale Y
+Region	518044	-X	Y	-Z	X	Y	Z	20	;Chin Scale Y Fine
+Region	518037	-X	Y	-Z	X	Y	Z	20	;Chin Scale Z
+Region	518047	-X	Y	-Z	X	Y	Z	20	;Chin Scale Z Fine
+;
+Region	518500	X	-Z	Y	X	Y	Z	115	;Neck - Adam's Apple
+Region	518510	X	-Z	Y	X	Y	Z	115	;Neck - Adam's Apple Fine
+Region	518530	X	Y	-Z	X	Y	Z	115	;Neck - Adam's Apple Scale X
+Region	518540	X	Y	-Z	X	Y	Z	115	;Neck - Adam's Apple Scale X Fine
+Region	518534	X	Y	-Z	X	Y	Z	115	;Neck - Adam's Apple Scale Y
+Region	518544	X	Y	-Z	X	Y	Z	115	;Neck - Adam's Apple Scale Y Fine
+Region	518537	X	Y	-Z	X	Y	Z	115	;Neck - Adam's Apple Scale Z
+Region	518547	X	Y	-Z	X	Y	Z	115	;Neck - Adam's Apple Scale Z Fine
+;
+Region	519000	X	-Z	Y	X	Y	Z	115	;Neck Sides Upper
+Region	519010	X	-Z	Y	X	Y	Z	115	;Neck Sides Upper Fine
+Region	519030	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Scale X
+Region	519040	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Scale X Fine
+
+Region	519034	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Scale Y
+Region	519044	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Scale Y Fine
+
+Region	519037	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Scale Z
+Region	519047	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Scale Z Fine
+
+Region	519060	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Rotate X
+Region	519070	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Rotate X Fine
+
+Region	519064	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Rotate Y
+Region	519074	X	Y	-Z	X	Y	Z	115	;Neck Sides Upper Rotate Y Fine
+;
+Region	519500	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower
+Region	519510	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Fine
+Region	519530	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Scale X
+Region	519540	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Scale X Fine
+Region	519534	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Scale Y
+Region	519544	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Scale Y Fine
+Region	519537	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Scale Z
+Region	519547	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Scale Z Fine
+Region	519560	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Rotate X
+Region	519570	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Rotate X Fine
+Region	519564	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Rotate Y
+Region	519574	X	Y	-Z	X	Y	Z	115	;Neck Sides Lower Rotate Y Fine
+
+;520000 - Neck Skin
+;520500 - Neck Low Skin
+;521000 - Collarbones

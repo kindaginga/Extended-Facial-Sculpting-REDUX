@@ -1,0 +1,154 @@
+﻿<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+	<moduleName>Extended Facial Sculpting REDUX</moduleName>
+	
+	<installSteps order="Explicit">
+		<installStep name="Choose Sculpt Config"> <!-- Choosing the branch for the following install step, via setting a simple flag. -->
+			<optionalFileGroups>
+				<group name="Configuration Type" type="SelectExactlyOne">
+					<plugins order="Explicit">	
+					
+						<plugin name="Normal Sculpts">
+							<description>
+								<![CDATA[The default, includes all the extended and additional sculpts.]]>
+							</description>
+							<conditionFlags>
+								<flag name="norm">On</flag>
+							</conditionFlags>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						
+						<plugin name="Normal Sculpts + Single-Side Sculpts">
+							<description>
+								<![CDATA[In addition to the extended vanilla sculpts and new sculpts, also includes single-side sculpts for the eyebrows, mouth sides and mouth corners (for making rough expressions with).]]>
+							</description>
+							<conditionFlags>
+								<flag name="sside">On</flag>
+							</conditionFlags>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						
+					</plugins>
+				</group>
+			</optionalFileGroups>
+		</installStep>
+		
+		<installStep name="Choose gender(s)">
+					<visible>
+				<flagDependency flag="norm" value="On"/>
+			</visible>
+			<optionalFileGroups order="Explicit">
+				<group name="Choose Gender(s)" type="SelectAny">
+					<plugins order="Explicit">
+
+						<plugin name="Female">
+							<description>
+								<![CDATA[Female sculpts. Can be installed together with Male.
+
+Important: don't use the pre-war mirror for extended sculpting. It gives Nate and Nora the same list, so extended sculpts freeze for one of them. Create your character first, then use slm 14 (yourself) or slm <RefID> (NPCs).]]>
+							</description>
+							<files>
+								<folder source="normal\female" destination="meshes\actors\character\characterassets" priority="0"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						
+						<plugin name="Male">
+							<description>
+								<![CDATA[Male sculpts. Can be installed together with Female.
+
+Note: male extended sculpts use new IDs in this version. Male faces and presets made with the original mod or Scrithel's edition keep their look, but some extended sliders read 0 for them. EFS Preset Converter fixes that for presets; for an existing character, save a LooksMenu preset and load it back with the converter installed.
+
+Important: don't use the pre-war mirror for extended sculpting. It gives Nate and Nora the same list, so extended sculpts freeze for one of them. Create your character first, then use slm 14 (yourself) or slm <RefID> (NPCs).
+
+Tip: most extended sculpts can only be picked from the list. Keep the LooksMenu List Sculpt Fix ticked in the next step so list picks work, and do extended sculpting outside the pre-war mirror (slm 14).]]>
+							</description>
+							<files>
+								<folder source="normal\male" destination="meshes\actors\character\characterassets" priority="0"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>						
+					</plugins>				
+				</group>
+			</optionalFileGroups>
+		</installStep>
+		
+		<installStep name="Choose gender(s)">
+					<visible>
+				<flagDependency flag="sside" value="On"/>
+			</visible>
+			<optionalFileGroups order="Explicit">
+				<group name="Choose Gender(s)" type="SelectAny">
+					<plugins order="Explicit">
+
+						<plugin name="Female">
+							<description>
+								<![CDATA[Female sculpts. Can be installed together with Male.
+
+Important: don't use the pre-war mirror for extended sculpting. It gives Nate and Nora the same list, so extended sculpts freeze for one of them. Create your character first, then use slm 14 (yourself) or slm <RefID> (NPCs).]]>
+							</description>
+							<files>
+								<folder source="sside\female" destination="meshes\actors\character\characterassets" priority="0"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						
+						<plugin name="Male">
+							<description>
+								<![CDATA[Male sculpts. Can be installed together with Female.
+
+Note: male extended sculpts use new IDs in this version. Male faces and presets made with the original mod or Scrithel's edition keep their look, but some extended sliders read 0 for them. EFS Preset Converter fixes that for presets; for an existing character, save a LooksMenu preset and load it back with the converter installed.
+
+Important: don't use the pre-war mirror for extended sculpting. It gives Nate and Nora the same list, so extended sculpts freeze for one of them. Create your character first, then use slm 14 (yourself) or slm <RefID> (NPCs).
+
+Tip: most extended sculpts can only be picked from the list. Keep the LooksMenu List Sculpt Fix ticked in the next step so list picks work, and do extended sculpting outside the pre-war mirror (slm 14).]]>
+							</description>
+							<files>
+								<folder source="sside\male" destination="meshes\actors\character\characterassets" priority="0"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>						
+					</plugins>				
+				</group>
+			</optionalFileGroups>
+		</installStep>
+		<installStep name="LooksMenu List Sculpt Fix">
+			<optionalFileGroups order="Explicit">
+				<group name="LooksMenu patch" type="SelectAny">
+					<plugins order="Explicit">
+						<plugin name="LooksMenu List Sculpt Fix">
+							<description>
+								<![CDATA[Ticked by default, and needed to pick most extended sculpts. Works with every version of LooksMenu.
+
+Most extended sculpts can only be picked from the Face list, but in LooksMenu a sculpt picked from the list freezes when you press E. This adds the one missing call to LooksMenu's interface file so list picks work. Nothing else is changed.
+
+How to use: hover over or scroll to a sculpt in the list so it's highlighted, then press E to edit it. Don't click on the face: clicking the face to select sculpts is buggy and can freeze them or pick the wrong one. Do extended sculpting outside the pre-war mirror (slm 14).
+
+Untick it only if you use another mod that replaces Interface\LooksMenu.swf.
+
+LooksMenu by expired6978.]]>
+							</description>
+							<files>
+								<folder source="looksmenu_fix" destination="" priority="0"/>
+							</files>
+							<typeDescriptor>
+								<type name="Recommended"/>
+							</typeDescriptor>
+						</plugin>
+					</plugins>
+				</group>
+			</optionalFileGroups>
+		</installStep>
+	</installSteps>
+</config>
